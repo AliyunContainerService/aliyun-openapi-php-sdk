@@ -91,7 +91,8 @@ abstract class RoaAcsRequest extends AcsRequest
 		$content = $this->getDomainParameter();
         if ($content != null) {
           $this->headers["Content-MD5"] = base64_encode(md5(json_encode($content),true));
-        }  
+        }
+		$this->headers["Content-Type"] = "application/octet-stream;charset=utf-8";
 	}
 	
 	private function replaceOccupiedParameters()
