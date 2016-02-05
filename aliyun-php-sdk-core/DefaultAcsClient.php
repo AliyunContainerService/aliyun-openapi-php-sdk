@@ -59,10 +59,11 @@ class DefaultAcsClient implements IAcsClient
 			throw new ClientException("Can not find endpoint to access.", "SDK.InvalidRegionId");
 		}
 		$requestUrl = $request->composeUrl($iSigner, $credential, $domain);
+		print_r($requestUrl);
 		if(count($request->getDomainParameter())>0){
 			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), json_encode($request->getDomainParameter()), $request->getHeaders());
 		} else {
-			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), null, $request->getHeaders());
+			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), $request->getContent(), $request->getHeaders());
 		}
 		
 		$retryTimes = 1;
@@ -72,7 +73,7 @@ class DefaultAcsClient implements IAcsClient
 			if(count($request->getDomainParameter())>0){
 			    $httpResponse = HttpHelper::curl($requestUrl, json_encode($request->getDomainParameter()), $request->getHeaders());
 			} else {
-				$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), null, $request->getHeaders());
+				$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), $request->getContent(), $request->getHeaders());
 			}
 			$retryTimes ++;
 		}
