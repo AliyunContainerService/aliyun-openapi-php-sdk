@@ -20,7 +20,7 @@
 include_once '../aliyun-php-sdk-core/Config.php';
 use Cs\Request\V20151215 as Cs;
 
-$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "ACSbW2iBbyX0Pk9N", "TLSwMm5LQU");
+$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "Your accessKeyId", "Your accessKeySecret");
 $client = new DefaultAcsClient($iClientProfile);
 
 //createCluster($client);
