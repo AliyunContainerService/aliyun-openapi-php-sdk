@@ -22,6 +22,7 @@ $productDomains =array(
 	new ProductDomain("Mts", "mts.cn-hangzhou.aliyuncs.com"),
 	new ProductDomain("ROS", "ros.aliyuncs.com"),
 	new ProductDomain("Dm", "dm.aliyuncs.com"),
+	new ProductDomain("Sms", "sms.aliyuncs.com"),
 	new ProductDomain("Bss", "bss.aliyuncs.com"),
 	new ProductDomain("Ecs", "ecs.aliyuncs.com"),
 	new ProductDomain("Oms", "oms.aliyuncs.com"),
@@ -61,8 +62,9 @@ $productDomains =array(
 	new ProductDomain("Ubsms-inner", "ubsms-inner.aliyuncs.com"),
     new ProductDomain("Green", "green.aliyuncs.com"),
     new ProductDomain("Iot", "iot.aliyuncs.com"),
-    new ProductDomain("CS", "cs.aliyuncs.com")
-
+    new ProductDomain("Domain", "domain.aliyuncs.com"),
+	new ProductDomain("Alidns", "alidns.aliyuncs.com"),
+	new ProductDomain("CS", "cs.aliyuncs.com")
 	);
 $endpoint = new Endpoint("cn-hangzhou", $regionIds, $productDomains);
 $endpoints = array($endpoint);
